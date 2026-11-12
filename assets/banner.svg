@@ -1,0 +1,231 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradients -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090d16" />
+      <stop offset="50%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#0b1120" />
+    </linearGradient>
+
+    <linearGradient id="primaryTextGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="50%" stop-color="#818cf8" />
+      <stop offset="100%" stop-color="#c084fc" />
+    </linearGradient>
+
+    <linearGradient id="accentCyan" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#06b6d4" />
+      <stop offset="100%" stop-color="#3b82f6" />
+    </linearGradient>
+
+    <linearGradient id="pulseGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10b981" />
+      <stop offset="50%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#10b981" />
+    </linearGradient>
+
+    <!-- Grid Pattern -->
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e293b" stroke-width="0.8" opacity="0.65" />
+      <circle cx="40" cy="40" r="1" fill="#334155" opacity="0.8" />
+    </pattern>
+
+    <!-- Glow Filter -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="15" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <style>
+    .grid-bg { fill: url(#grid); }
+    .title {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-weight: 800;
+      font-size: 44px;
+      letter-spacing: -0.5px;
+    }
+    .subtitle {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-weight: 500;
+      font-size: 20px;
+      fill: #94a3b8;
+    }
+    .tagline {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-weight: 400;
+      font-size: 15px;
+      fill: #64748b;
+    }
+    .pill-text {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-weight: 600;
+      font-size: 13px;
+    }
+
+    /* Ambient Pulsing Glow Orbs */
+    @keyframes orbFloatA {
+      0%, 100% { transform: translate(0px, 0px) scale(1); opacity: 0.35; }
+      50% { transform: translate(40px, -20px) scale(1.15); opacity: 0.55; }
+    }
+    @keyframes orbFloatB {
+      0%, 100% { transform: translate(0px, 0px) scale(1); opacity: 0.25; }
+      50% { transform: translate(-30px, 25px) scale(1.2); opacity: 0.45; }
+    }
+    .orb-1 { animation: orbFloatA 8s ease-in-out infinite; }
+    .orb-2 { animation: orbFloatB 10s ease-in-out infinite; }
+
+    /* EKG / Heartbeat Monitor Line Pulse */
+    @keyframes ekgPulse {
+      0% { stroke-dashoffset: 2400; }
+      100% { stroke-dashoffset: 0; }
+    }
+    .ekg-line {
+      stroke-dasharray: 400, 800;
+      animation: ekgPulse 6s linear infinite;
+    }
+
+    /* Status Dot Blinking */
+    @keyframes blinkGreen {
+      0%, 100% { fill: #10b981; filter: drop-shadow(0 0 2px #10b981); }
+      50% { fill: #34d399; filter: drop-shadow(0 0 10px #10b981); }
+    }
+    .status-dot-active {
+      animation: blinkGreen 2s ease-in-out infinite;
+    }
+
+    /* Uptime Card Subtle Float */
+    @keyframes cardFloat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-4px); }
+    }
+    .hud-card {
+      animation: cardFloat 5s ease-in-out infinite;
+    }
+  </style>
+
+  <!-- Background Canvas -->
+  <rect width="1200" height="420" rx="16" fill="url(#bgGrad)" />
+  <rect width="1200" height="420" rx="16" class="grid-bg" />
+
+  <!-- Ambient Dynamic Glowing Orbs in Background -->
+  <g opacity="0.4">
+    <circle class="orb-1" cx="200" cy="100" r="130" fill="#0284c7" filter="url(#softGlow)" />
+    <circle class="orb-2" cx="1020" cy="320" r="150" fill="#6366f1" filter="url(#softGlow)" />
+    <circle class="orb-1" cx="900" cy="90" r="100" fill="#10b981" filter="url(#softGlow)" />
+  </g>
+
+  <!-- Animated EKG / Synthetic Heartbeat Line across the Lower Mid Canvas -->
+  <path d="M 0 310 L 220 310 L 245 295 L 260 330 L 280 270 L 305 345 L 325 310 L 520 310 L 545 290 L 560 335 L 580 260 L 605 350 L 625 310 L 820 310 L 845 295 L 860 330 L 880 275 L 905 340 L 925 310 L 1200 310" 
+        fill="none" 
+        stroke="#1e293b" 
+        stroke-width="3" 
+        opacity="0.5" />
+  
+  <path class="ekg-line"
+        d="M 0 310 L 220 310 L 245 295 L 260 330 L 280 270 L 305 345 L 325 310 L 520 310 L 545 290 L 560 335 L 580 260 L 605 350 L 625 310 L 820 310 L 845 295 L 860 330 L 880 275 L 905 340 L 925 310 L 1200 310" 
+        fill="none" 
+        stroke="url(#pulseGlow)" 
+        stroke-width="3" 
+        filter="url(#glow)" />
+
+  <!-- High-Tech Top Status Bar / HUD Badges in Foreground -->
+  <g transform="translate(60, 42)">
+    <rect width="210" height="30" rx="15" fill="#1e293b" stroke="#334155" stroke-width="1" opacity="0.9" />
+    <circle class="status-dot-active" cx="18" cy="15" r="5" fill="#10b981" />
+    <text x="32" y="20" fill="#e2e8f0" font-family="-apple-system, sans-serif" font-weight="600" font-size="12">SYSTEMS OPERATIONAL</text>
+    <text x="175" y="20" fill="#38bdf8" font-family="-apple-system, sans-serif" font-weight="700" font-size="12">99.99%</text>
+  </g>
+
+  <g transform="translate(930, 42)">
+    <rect width="210" height="30" rx="15" fill="#1e293b" stroke="#334155" stroke-width="1" opacity="0.9" />
+    <circle cx="18" cy="15" r="4" fill="#38bdf8" />
+    <text x="32" y="20" fill="#94a3b8" font-family="-apple-system, sans-serif" font-weight="500" font-size="12">LATENCY POLLER</text>
+    <text x="160" y="20" fill="#10b981" font-family="-apple-system, sans-serif" font-weight="700" font-size="12">24ms avg</text>
+  </g>
+
+  <!-- Title & Subtitle in FOREGROUND (Clear, High Contrast, Prominent) -->
+  <!-- Top decorative category tracker -->
+  <text x="60" y="112" fill="#38bdf8" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-weight="700" font-size="14" letter-spacing="2">
+    ENTERPRISE OBSERVABILITY &amp; SYNTHETIC TESTING
+  </text>
+
+  <!-- Main Hero Title -->
+  <text x="60" y="162" class="title" fill="url(#primaryTextGrad)" filter="url(#glow)">
+    Continuous Web &amp; App Health Monitoring
+  </text>
+  <!-- Non-blurred crisp overlay to guarantee razor-sharp legibility -->
+  <text x="60" y="162" class="title" fill="url(#primaryTextGrad)">
+    Continuous Web &amp; App Health Monitoring
+  </text>
+
+  <!-- Subtitle -->
+  <text x="60" y="202" class="subtitle">
+    The Curated Index of High-Performance Synthetic Monitoring, Uptime Checks &amp; Status Pages
+  </text>
+
+  <!-- Tagline / SEO Meta Descriptor -->
+  <text x="60" y="234" class="tagline">
+    Production-grade synthetic transactions, browser automation, multi-region probes, and incident intelligence.
+  </text>
+
+  <!-- Foreground Feature Pills (Ensuring Title & Subtitle Remain Prominent) -->
+  <g transform="translate(60, 260)">
+    <!-- Pill 1: Synthetic Checks -->
+    <rect x="0" y="0" width="175" height="34" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.2" opacity="0.95" />
+    <text x="18" y="22" class="pill-text" fill="#38bdf8">⚡ Synthetic Checks</text>
+
+    <!-- Pill 2: Browser Flows -->
+    <rect x="190" y="0" width="165" height="34" rx="8" fill="#1e293b" stroke="#818cf8" stroke-width="1.2" opacity="0.95" />
+    <text x="208" y="22" class="pill-text" fill="#a5b4fc">🎭 Playwright &amp; RUM</text>
+
+    <!-- Pill 3: Self-Hosted -->
+    <rect x="370" y="0" width="160" height="34" rx="8" fill="#1e293b" stroke="#10b981" stroke-width="1.2" opacity="0.95" />
+    <text x="388" y="22" class="pill-text" fill="#6ee7b7">🐳 100% Self-Hosted</text>
+
+    <!-- Pill 4: Status Pages -->
+    <rect x="545" y="0" width="155" height="34" rx="8" fill="#1e293b" stroke="#c084fc" stroke-width="1.2" opacity="0.95" />
+    <text x="563" y="22" class="pill-text" fill="#e9d5ff">🚦 Status Pages</text>
+
+    <!-- Pill 5: Edge Probes -->
+    <rect x="715" y="0" width="155" height="34" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="1.2" opacity="0.95" />
+    <text x="733" y="22" class="pill-text" fill="#fde68a">🌐 Multi-Region</text>
+  </g>
+
+  <!-- Floating HUD Stat Mini-Cards in Bottom Foreground -->
+  <g class="hud-card" transform="translate(60, 345)">
+    <rect width="210" height="52" rx="10" fill="#0f172a" stroke="#1e293b" stroke-width="1.5" />
+    <text x="16" y="22" fill="#64748b" font-family="-apple-system, sans-serif" font-size="11" font-weight="600">MARKET SIZE (2025-2026)</text>
+    <text x="16" y="42" fill="#f8fafc" font-family="-apple-system, sans-serif" font-size="16" font-weight="700">$3.2B – $4.5B</text>
+    <text x="145" y="42" fill="#10b981" font-family="-apple-system, sans-serif" font-size="13" font-weight="700">+16% CAGR</text>
+  </g>
+
+  <g class="hud-card" transform="translate(290, 345)">
+    <rect width="210" height="52" rx="10" fill="#0f172a" stroke="#1e293b" stroke-width="1.5" />
+    <text x="16" y="22" fill="#64748b" font-family="-apple-system, sans-serif" font-size="11" font-weight="600">ECOSYSTEM SELECTION</text>
+    <text x="16" y="42" fill="#f8fafc" font-family="-apple-system, sans-serif" font-size="16" font-weight="700">Enterprise + OSS</text>
+    <text x="160" y="42" fill="#38bdf8" font-family="-apple-system, sans-serif" font-size="12" font-weight="600">Curated</text>
+  </g>
+
+  <g class="hud-card" transform="translate(520, 345)">
+    <rect width="210" height="52" rx="10" fill="#0f172a" stroke="#1e293b" stroke-width="1.5" />
+    <text x="16" y="22" fill="#64748b" font-family="-apple-system, sans-serif" font-size="11" font-weight="600">CHECK CADENCE</text>
+    <text x="16" y="42" fill="#f8fafc" font-family="-apple-system, sans-serif" font-size="16" font-weight="700">Sub-Minute &amp; Realtime</text>
+  </g>
+
+  <g class="hud-card" transform="translate(750, 345)">
+    <rect width="210" height="52" rx="10" fill="#0f172a" stroke="#1e293b" stroke-width="1.5" />
+    <text x="16" y="22" fill="#64748b" font-family="-apple-system, sans-serif" font-size="11" font-weight="600">ZERO DATA LOCK-IN</text>
+    <text x="16" y="42" fill="#f8fafc" font-family="-apple-system, sans-serif" font-size="16" font-weight="700">OTel &amp; Prom Ready</text>
+  </g>
+</svg>
