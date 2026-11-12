@@ -63,7 +63,7 @@ The sector demonstrates **moderate market concentration with strong persistent f
 
 ## 💻 Open-Source GitHub Projects
 
-*Self-hosted, transparent, zero-vendor-lock-in monitoring engines and status pages. Ranked in descending order by GitHub Stars_Count.*
+*Self-hosted, transparent, zero-vendor-lock-in monitoring engines and status pages. Ranked in descending order by GitHub_Stars_Count.*
 
 | Repository | GitHub_Stars | Check Types & Capabilities | Tech Stack & Deployment | License |
 |:---|:---|:---|:---|:---|
