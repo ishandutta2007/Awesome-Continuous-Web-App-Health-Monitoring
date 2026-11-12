@@ -63,9 +63,9 @@ The sector demonstrates **moderate market concentration with strong persistent f
 
 ## 💻 Open-Source GitHub Projects
 
-*Self-hosted, transparent, zero-vendor-lock-in monitoring engines and status pages. Ranked in descending order by GitHub Star count.*
+*Self-hosted, transparent, zero-vendor-lock-in monitoring engines and status pages. Ranked in descending order by GitHub Stars_Count.*
 
-| Repository | GitHub Stars | Check Types & Capabilities | Tech Stack & Deployment | License |
+| Repository | GitHub_Stars | Check Types & Capabilities | Tech Stack & Deployment | License |
 |:---|:---|:---|:---|:---|
 | **[Uptime Kuma](https://github.com/louislam/uptime-kuma)** | [![Stars](https://img.shields.io/github/stars/louislam/uptime-kuma?style=social&color=white)](https://github.com/louislam/uptime-kuma/stargazers) | HTTP(s), TCP, Ping, DNS, Push/Heartbeat, Steam Game Server, Docker container status, 20s interval checks, beautiful embedded status page with multi-incident support. | Node.js, Vue.js, SQLite (Single Docker container) | MIT |
 | **[Upptime](https://github.com/upptime/upptime)** | [![Stars](https://img.shields.io/github/stars/upptime/upptime?style=social&color=white)](https://github.com/upptime/upptime/stargazers) | Serverless uptime monitor & status page powered entirely by GitHub Actions and GitHub Pages; opens Git issues on failure and commits latency graphs. | GitHub Actions, Git, Svelte / Markdown | MIT |
@@ -103,7 +103,7 @@ Contributions are warmly welcomed! Help make this the most comprehensive and acc
 1. 🍴 **Fork the repository** to your GitHub account.
 2. 🌿 **Create a descriptive feature branch**: `git checkout -b add-monitoring-tool`.
 3. 📝 **Edit `README.md`**: Follow the existing tabular structure, ensuring pricing and free tier specs are concrete and accurate.
-4. 🌟 **Add official star badges** for open-source repositories linking to their respective stargazers page.
+4. 🌟 **Add official Stars_Badges** for open-source repositories linking to their respective stargazers page.
 5. 🚀 **Submit a Pull Request** with a brief summary of the added or updated tools.
 
 ---
