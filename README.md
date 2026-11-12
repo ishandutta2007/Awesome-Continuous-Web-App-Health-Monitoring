@@ -1,6 +1,6 @@
 # Awesome-Continuous-Web-App-Health-Monitoring
 
-# Top Continuous Web & App Health Monitoring Ecosystem
+## Top Continuous Web & App Health Monitoring Ecosystem
 
 **Curated List of SaaS Products & Open-Source GitHub Projects**  
 *Focused on Synthetic Monitoring, Uptime Checks & Real-User Performance Visibility*  
